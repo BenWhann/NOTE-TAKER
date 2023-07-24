@@ -24,8 +24,6 @@ const readAndAppend = (content, file) => {
 };
 
 router.get('/notes', (req, res) => {
-    // console.log('Notes Rendered');
-    // res.render('notes');
     readFromFile('db/db.json', 'utf-8')
     .then((notes) => {
         return JSON.parse(notes);
@@ -35,7 +33,7 @@ router.get('/notes', (req, res) => {
     })
 });
 
-// inside of route add note. 
+
 router.post('/notes', (req, res) => {
     console.log(req.body);
 
@@ -54,6 +52,22 @@ router.post('/notes', (req, res) => {
     res.error('There was an error');
     }
 });
+
+// Attempted delete request
+
+// router.delete('/:id', (req, res) => {
+//     const noteId = req.params.id;
+//     readFromFile('./db/db.json')
+//       .then((data) => JSON.parse(data))
+//       .then((json) => {
+        
+//         const result = json.filter((note) => note.id !== noteId);
+  
+//         writeToFile('./db/db.json', result);
+  
+//         res.json(`Item ${noteId} has been deleted 🗑️`);
+//       });
+//   });
 
 
 module.exports = router;
