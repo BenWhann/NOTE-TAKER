@@ -53,21 +53,19 @@ router.post('/notes', (req, res) => {
     }
 });
 
-// Attempted delete request
-
-// router.delete('/:id', (req, res) => {
-//     const noteId = req.params.id;
-//     readFromFile('./db/db.json')
-//       .then((data) => JSON.parse(data))
-//       .then((json) => {
+router.delete('/notes/:id', (req, res) => {
+    const noteId = req.params.id;
+    readFromFile('./db/db.json')
+      .then((data) => JSON.parse(data))
+      .then((json) => {
         
-//         const result = json.filter((note) => note.id !== noteId);
+        const result = json.filter((note) => note.id !== noteId);
   
-//         writeToFile('./db/db.json', result);
+        writeToFile('./db/db.json', result);
   
-//         res.json(`Item ${noteId} has been deleted 🗑️`);
-//       });
-//   });
+        res.json(`Item ${noteId} has been deleted`);
+      });
+  });
 
 
 module.exports = router;
