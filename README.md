@@ -15,6 +15,11 @@ Simply pull down the code and open it in your IDE of choice. From there, run the
 
 An example of how this application could be used is taking notes for a class.
 
+## Assets
+
+![image](https://github.com/BenWhann/NOTE-TAKER/assets/129990965/0f51cbc2-6719-4102-a05f-f2fc7f51d2d9)
+
+
 ## License
 
 MIT License
